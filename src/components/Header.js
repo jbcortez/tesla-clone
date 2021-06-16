@@ -102,8 +102,8 @@ const Logo = styled.img.attrs({
   src: `${logo}`,
 })`
   padding: 0 0 0 0.8rem;
-  width: 12rem;
-  height: 1.6rem;
+  width: 120px;
+  height: 16px;
 `;
 
 const Menu = styled.div`
