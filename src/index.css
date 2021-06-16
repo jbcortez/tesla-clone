@@ -8,9 +8,12 @@
   padding: 0;
 }
 
+:root {
+  --app-height: 100%;
+}
+
 html {
   font-size: 62.5%;
-
   overscroll-behavior: none;
   height: 100%;
   overflow: hidden;
@@ -23,13 +26,14 @@ body::-webkit-scrollbar {
 body {
   font-family: 'Roboto', sans-serif;
   color: #393c41;
-  height: 100%;
   overflow: auto;
   overflow-x: hidden;
   scroll-behavior: smooth;
   scroll-snap-type: y mandatory;
   -ms-overflow-style: none; /* IE and Edge */
   scrollbar-width: none; /* Firefox */
+  height: 100vh;
+  height: var(--app-height);
 }
 
 a {

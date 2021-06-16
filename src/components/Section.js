@@ -119,7 +119,6 @@ const slideDown = keyframes`
 const Container = styled.div`
   width: 100vw;
   min-height: 100vh;
-  min-height: -webkit-fill-available;
   display: flex;
   justify-content: space-between;
   flex-direction: column;
@@ -129,7 +128,6 @@ const Container = styled.div`
   background-position: center;
   background-repeat: no-repeat;
   scroll-snap-align: start;
-  ${'' /* transition: background 0.5s ease-in; */}
 
   @media (max-width: 600px) {
     background: url(${(props) => props.mobileBackgroundImg});
