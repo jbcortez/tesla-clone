@@ -44,7 +44,10 @@ const Home = () => {
   useEffect(() => {
     window.addEventListener('resize', () => {
       setBrowserWindow(`${document.documentElement.clientHeight}px`);
-    });
+      if (mobileMatch) {
+        document.body.style.height = browserWindow;
+      }
+    }); // eslint-disable-next-line
   }, []);
 
   useEffect(() => {
