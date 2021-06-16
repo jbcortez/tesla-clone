@@ -8,7 +8,6 @@ import { useMediaQuery } from '@material-ui/core';
 const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const tabletMatch = useMediaQuery('(max-width:1200px)');
-  const mobileMatch = useMediaQuery('(max-width:500px)');
 
   return (
     <Wrapper>
@@ -24,14 +23,14 @@ const Header = () => {
       <RightMenu>
         {!tabletMatch && (
           <>
-            <a href='#'>Shop</a>
-            <a href='#'>Account</a>
+            <a href='#model-s'>Shop</a>
+            <a href='#model-s'>Account</a>
           </>
         )}
 
-        <a onClick={() => setMenuOpen(true)} id={'menu-btn'}>
+        <span onClick={() => setMenuOpen(true)} id={'menu-btn'}>
           Menu
-        </a>
+        </span>
       </RightMenu>
       <HiddenMenu menuOpen={menuOpen}>
         <CloseIcon
@@ -60,23 +59,23 @@ const Header = () => {
             </a>
           </>
         )}
-        <a href='#'>Existing Inventory</a>
-        <a href='#'>Used Inventory</a>
-        <a href='#'>Trade-In</a>
-        <a href='#'>Cybertruck</a>
-        <a href='#'>Roadster</a>
-        <a href='#'>Semi</a>
-        <a href='#'>Charging</a>
-        <a href='#'>Powerwall</a>
-        <a href='#'>Commercial Energy</a>
-        <a href='#'>Utilities</a>
-        <a href='#'>Test Drive</a>
-        <a href='#'>Find Us</a>
-        <a href='#'>Support</a>
+        <a href='#model-s'>Existing Inventory</a>
+        <a href='#model-s'>Used Inventory</a>
+        <a href='#model-s'>Trade-In</a>
+        <a href='#model-s'>Cybertruck</a>
+        <a href='#model-s'>Roadster</a>
+        <a href='#model-s'>Semi</a>
+        <a href='#model-s'>Charging</a>
+        <a href='#model-s'>Powerwall</a>
+        <a href='#model-s'>Commercial Energy</a>
+        <a href='#model-s'>Utilities</a>
+        <a href='#model-s'>Test Drive</a>
+        <a href='#model-s'>Find Us</a>
+        <a href='#model-s'>Support</a>
         {tabletMatch && (
           <>
-            <a href='#'>Shop</a>
-            <a href='#'>Account</a>
+            <a href='#model-s'>Shop</a>
+            <a href='#model-s'>Account</a>
           </>
         )}
       </HiddenMenu>
@@ -133,6 +132,21 @@ const Menu = styled.div`
 
 const RightMenu = styled(Menu)`
   margin-right: 0;
+
+  span#menu-btn {
+    text-decoration: none;
+    font-size: 1.6rem;
+    font-weight: 400;
+    padding: 0.8rem 1.5rem;
+    color: #171a20;
+    cursor: pointer;
+    border-radius: 10px;
+    transition: background-color 0.3s ease-in;
+
+    &:hover {
+      background: rgb(0 0 0 / 5%);
+    }
+  }
 
   a {
     padding: 0.8rem 1.5rem;
