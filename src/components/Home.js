@@ -19,7 +19,11 @@ import styled from 'styled-components';
 import { useMediaQuery } from '@material-ui/core';
 
 const Home = () => {
-  const mobileMatch = useMediaQuery('max-width:500px');
+  const mobileMatch = useMediaQuery('(max-width:500px)');
+
+  useEffect(() => {
+    console.log(mobileMatch);
+  }, [mobileMatch]);
 
   useEffect(() => {
     let target = document.querySelectorAll('.fade');

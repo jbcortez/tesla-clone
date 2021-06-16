@@ -21,7 +21,8 @@ const Section = ({
     <Container
       backgroundImg={backgroundImg}
       mobileBackgroundImg={mobileBackgroundImg}
-      id={id}>
+      id={id}
+      footer={footer}>
       <TextGroup className={className}>
         <Headline mobileHeader={mobileHeader}>{headline}</Headline>
         <SubHeadline mobileHeader={mobileHeader}>{subHeadline}</SubHeadline>
@@ -30,7 +31,7 @@ const Section = ({
         <ButtonGroup>
           {singleBtn ? (
             <>
-              <LeftButton black footer>
+              <LeftButton black footer={footer}>
                 {leftBtnLabel}
               </LeftButton>
             </>
@@ -132,7 +133,10 @@ const Container = styled.div`
   @media (max-width: 600px) {
     background: url(${(props) => props.mobileBackgroundImg});
     background-size: cover;
-    background-position: center;
+    ${(props) =>
+      props.footer
+        ? `background-position: center;`
+        : `background-position: center;`}
     background-repeat: no-repeat;
   }
 `;
@@ -199,12 +203,17 @@ const LeftButton = styled.div`
 
   @media (max-width: 600px) {
     width: 90vw;
+    ${(props) => props.footer && `margin-bottom: 0rem;`}
   }
 `;
 
 const RightButton = styled(LeftButton)`
   background-color: rgba(255, 255, 255, 0.8);
   color: #000;
+
+  @media (max-width: 600px) {
+    width: 90vw;
+  }
 `;
 
 const Wrap = styled.div`
