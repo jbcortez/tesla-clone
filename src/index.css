@@ -36,12 +36,9 @@ body {
 }
 
 @media screen and (min-width: 500px) {
-  html {
-    height: var(--app-height);
-  }
-
+  html,
   body {
-    height: var(--app-height);
+    height: calc(100vh - calc(100vh - 100%));
   }
 }
 
