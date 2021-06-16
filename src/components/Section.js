@@ -16,6 +16,7 @@ const Section = ({
   footer,
   className,
   mobileHeader,
+  firstSection,
 }) => {
   return (
     <Container
@@ -42,7 +43,7 @@ const Section = ({
             </>
           )}
         </ButtonGroup>
-        <ArrowIcon id={id} icon={faChevronDown} size={'3x'} />
+        {firstSection && <ArrowIcon id={id} icon={faChevronDown} size={'3x'} />}
         {footer && <Footer />}
       </Wrap>
     </Container>

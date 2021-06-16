@@ -51,11 +51,14 @@ const Home = () => {
         headline={'Model S'}
         subHeadline={[
           'Order online for ',
-          <span className={'subHeadlineSpan'}>touchless delivery</span>,
+          <span key={0} className={'subHeadlineSpan'}>
+            touchless delivery
+          </span>,
         ]}
         leftBtnLabel={'Custom Order'}
         rightBtnLabel={'Existing Inventory'}
         className={'fade fadeOut'}
+        firstSection={true}
       />
       <Section
         id='model-y'
@@ -64,7 +67,9 @@ const Home = () => {
         headline={'Model Y'}
         subHeadline={[
           'Order online for ',
-          <span className={'subHeadlineSpan'}>touchless delivery</span>,
+          <span key={1} className={'subHeadlineSpan'}>
+            touchless delivery
+          </span>,
         ]}
         leftBtnLabel={'Custom Order'}
         rightBtnLabel={'Existing Inventory'}
@@ -77,7 +82,9 @@ const Home = () => {
         headline={'Model 3'}
         subHeadline={[
           'Order online for ',
-          <span className={'subHeadlineSpan'}>touchless delivery</span>,
+          <span key={2} className={'subHeadlineSpan'}>
+            touchless delivery
+          </span>,
         ]}
         leftBtnLabel={'Custom Order'}
         rightBtnLabel={'Existing Inventory'}
@@ -90,7 +97,9 @@ const Home = () => {
         headline={'Model X'}
         subHeadline={[
           'Order online for ',
-          <span className={'subHeadlineSpan'}>touchless delivery</span>,
+          <span key={3} className={'subHeadlineSpan'}>
+            touchless delivery
+          </span>,
         ]}
         leftBtnLabel={'Custom Order'}
         rightBtnLabel={'Existing Inventory'}
