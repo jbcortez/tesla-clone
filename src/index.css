@@ -33,7 +33,16 @@ body {
   -ms-overflow-style: none; /* IE and Edge */
   scrollbar-width: none; /* Firefox */
   height: 100vh;
-  height: var(--app-height);
+}
+
+@media screen and (min-width: 500px) {
+  html {
+    height: var(--app-height);
+  }
+
+  body {
+    height: var(--app-height);
+  }
 }
 
 a {
