@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import Header from './Header';
 import Section from './Section';
 import ModelS from '../images/model-s.jpg';
@@ -20,22 +20,6 @@ import { useMediaQuery } from '@material-ui/core';
 
 const Home = () => {
   const mobileMatch = useMediaQuery('max-width:500px');
-
-  useEffect(() => {
-    let target = document.querySelectorAll('.fade');
-    let observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.intersectionRatio > 0) {
-          entry.target.classList.replace('fadeOut', 'fadeIn');
-        } else {
-          entry.target.classList.replace('fadeIn', 'fadeOut');
-        }
-      });
-    });
-    target.forEach((section) => {
-      observer.observe(section);
-    });
-  }, []);
 
   return (
     <Wrapper>
