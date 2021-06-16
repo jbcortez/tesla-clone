@@ -135,7 +135,7 @@ const Container = styled.div`
     background-size: cover;
     ${(props) =>
       props.footer
-        ? `background-position: center;`
+        ? `background-position-y: -180px;`
         : `background-position: center;`}
     background-repeat: no-repeat;
   }
