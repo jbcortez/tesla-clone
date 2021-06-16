@@ -1,13 +1,68 @@
-body {
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+html {
+  font-size: 62.5%;
+
+  overscroll-behavior: none;
+  height: 100%;
+  overflow: hidden;
+}
+
+body::-webkit-scrollbar {
+  display: none;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  color: #393c41;
+  height: 100%;
+  overflow: auto;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+  scroll-snap-type: y mandatory;
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+a {
+  color: #393c41;
+}
+
+.fade {
+  transition: opacity 0.5s ease-in;
+}
+
+.fadeIn {
+  opacity: 1;
+}
+.fadeOut {
+  opacity: 0;
+}
+
+.subHeadlineSpan {
+  position: relative;
+}
+
+.subHeadlineSpan::after {
+  content: '';
+  width: 100%;
+  height: 1px;
+  color: black;
+  background-color: black;
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+}
+
+.mobile-h1 {
+  font-size: 2.7rem;
+  text-align: center;
 }
