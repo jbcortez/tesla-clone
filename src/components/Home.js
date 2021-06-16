@@ -16,8 +16,11 @@ import SolarRoofMobile from '../images/sr-mobile.jpeg';
 import Accessories from '../images/accessories.jpg';
 import AccessoriesMobile from '../images/accessories-mobile.jpeg';
 import styled from 'styled-components';
+import { useMediaQuery } from '@material-ui/core';
 
 const Home = () => {
+  const mobileMatch = useMediaQuery('max-width:500px');
+
   useEffect(() => {
     let target = document.querySelectorAll('.fade');
     let observer = new IntersectionObserver((entries) => {
@@ -99,7 +102,7 @@ const Home = () => {
         leftBtnLabel={'Order Now'}
         rightBtnLabel={'Learn More'}
         className={'fade fadeOut'}
-        mobileHeader={true}
+        mobileHeader={mobileMatch}
       />
       <Section
         id='solar-roof'
@@ -110,7 +113,7 @@ const Home = () => {
         leftBtnLabel={'Order Now'}
         rightBtnLabel={'Learn More'}
         className={'fade fadeOut'}
-        mobileHeader={true}
+        mobileHeader={mobileMatch}
       />
       <Section
         id='accessories'
