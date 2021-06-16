@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
-import logo from '../images/logo.svg';
+import logo from '../images/tesla-wordmark.png';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTimes } from '@fortawesome/free-solid-svg-icons';
 import { useMediaQuery } from '@material-ui/core';
@@ -102,8 +102,8 @@ const Logo = styled.img.attrs({
   src: `${logo}`,
 })`
   padding: 0 0 0 0.8rem;
-  height: 16px;
   width: 120px;
+  height: 16px;
 
   @media (max-width: 500px) {
     padding: 0;

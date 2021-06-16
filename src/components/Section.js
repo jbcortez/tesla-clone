@@ -151,7 +151,6 @@ const TextGroup = styled.div`
 
 const Headline = styled.h1`
   font-size: 4rem;
-  padding-bottom: 0.5rem;
   font-weight: 600;
   animation: ${fadeUp} 1.5s ease-in-out;
 
@@ -215,7 +214,7 @@ const Wrap = styled.div`
   margin-bottom: 4rem;
 
   @media (max-width: 600px) {
-    margin-bottom: 2rem;
+    margin-bottom: 13rem;
   }
 `;
 

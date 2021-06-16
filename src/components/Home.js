@@ -37,14 +37,6 @@ const Home = () => {
     });
   }, []);
 
-  useEffect(() => {
-    if (mobileMatch) {
-      window.addEventListener('resize', () => {
-        document.body.style.height = `${window.innerHeight}px !important`;
-      });
-    }
-  }, [mobileMatch]);
-
   return (
     <Wrapper>
       <Header />
