@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import Header from './Header';
 import Section from './Section';
 import ModelS from '../images/model-s.jpg';
@@ -21,10 +21,6 @@ import { useMediaQuery } from '@material-ui/core';
 const Home = () => {
   const mobileMatch = useMediaQuery('max-width:500px');
 
-  const [browserWindow, setBrowserWindow] = useState(
-    `${document.documentElement.clientHeight}px`
-  );
-
   useEffect(() => {
     let target = document.querySelectorAll('.fade');
     let observer = new IntersectionObserver((entries) => {
@@ -42,19 +38,12 @@ const Home = () => {
   }, []);
 
   useEffect(() => {
-    window.addEventListener('resize', () => {
-      setBrowserWindow(`${document.documentElement.clientHeight}px`);
-      if (mobileMatch) {
-        document.body.style.height = browserWindow;
-      }
-    }); // eslint-disable-next-line
-  }, []);
-
-  useEffect(() => {
     if (mobileMatch) {
-      document.body.style.height = browserWindow;
+      window.addEventListener('resize', () => {
+        document.body.style.height = `${document.documentElement.innerHeight}px !important`;
+      });
     }
-  }, [browserWindow, mobileMatch]);
+  }, [mobileMatch]);
 
   return (
     <Wrapper>
