@@ -22,7 +22,7 @@ const Home = () => {
   const mobileMatch = useMediaQuery('max-width:500px');
 
   const [browserWindow, setBrowserWindow] = useState(
-    document.documentElement.clientHeight
+    `${document.documentElement.clientHeight}px`
   );
 
   useEffect(() => {
@@ -43,7 +43,7 @@ const Home = () => {
 
   useEffect(() => {
     window.addEventListener('resize', () => {
-      setBrowserWindow(document.documentElement.clientHeight);
+      setBrowserWindow(`${document.documentElement.clientHeight}px`);
     });
   }, []);
 
