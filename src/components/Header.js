@@ -102,8 +102,12 @@ const Logo = styled.img.attrs({
   src: `${logo}`,
 })`
   padding: 0 0 0 0.8rem;
-  width: 120px;
   height: 16px;
+  width: 120px;
+
+  @media (max-width: 500px) {
+    padding: 0;
+  }
 `;
 
 const Menu = styled.div`
