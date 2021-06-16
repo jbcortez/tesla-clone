@@ -40,7 +40,7 @@ const Home = () => {
   useEffect(() => {
     if (mobileMatch) {
       window.addEventListener('resize', () => {
-        document.body.style.height = `${document.documentElement.innerHeight}px !important`;
+        document.body.style.height = `${window.innerHeight}px !important`;
       });
     }
   }, [mobileMatch]);
