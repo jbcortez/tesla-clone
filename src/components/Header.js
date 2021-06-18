@@ -7,6 +7,7 @@ import { useMediaQuery } from '@material-ui/core';
 
 const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);
+  // eslint-disable-next-line
   const [primaryLinks, setPrimaryLinks] = useState([
     'Model S',
     'Model 3',
@@ -15,6 +16,7 @@ const Header = () => {
     'Solar Roof',
     'Solar Panels',
   ]);
+  // eslint-disable-next-line
   const [HiddenMenuLinks, setHiddenMenuLinks] = useState([
     {
       title: 'Existing Inventory',
@@ -121,19 +123,13 @@ const Header = () => {
             </a>
           </>
         )}
-        <a href='#model-s'>Existing Inventory</a>
-        <a href='#model-s'>Used Inventory</a>
-        <a href='#model-s'>Trade-In</a>
-        <a href='#model-s'>Cybertruck</a>
-        <a href='#model-s'>Roadster</a>
-        <a href='#model-s'>Semi</a>
-        <a href='#model-s'>Charging</a>
-        <a href='#model-s'>Powerwall</a>
-        <a href='#model-s'>Commercial Energy</a>
-        <a href='#model-s'>Utilities</a>
-        <a href='#model-s'>Test Drive</a>
-        <a href='#model-s'>Find Us</a>
-        <a href='#model-s'>Support</a>
+        {HiddenMenuLinks.map((link, i) => {
+          return (
+            <a key={i} href={link.url}>
+              {link.title}
+            </a>
+          );
+        })}
         {tabletMatch && (
           <>
             <a href='#model-s'>Shop</a>
