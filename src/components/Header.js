@@ -7,12 +7,74 @@ import { useMediaQuery } from '@material-ui/core';
 
 const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [primaryLinks, setPrimaryLinks] = useState([
+    'Model S',
+    'Model 3',
+    'Model X',
+    'Model Y',
+    'Solar Roof',
+    'Solar Panels',
+  ]);
+  const [HiddenMenuLinks, setHiddenMenuLinks] = useState([
+    {
+      title: 'Existing Inventory',
+      url: '#model-s',
+    },
+    {
+      title: 'Used Inventory',
+      url: '#model-s',
+    },
+    {
+      title: 'Trade-In',
+      url: '#model-s',
+    },
+    {
+      title: 'Cybertruck',
+      url: '#model-s',
+    },
+    {
+      title: 'Roadster',
+      url: '#model-s',
+    },
+    {
+      title: 'Semi',
+      url: '#model-s',
+    },
+    {
+      title: 'Charging',
+      url: '#model-s',
+    },
+    {
+      title: 'Powerwall',
+      url: '#model-s',
+    },
+    {
+      title: 'Commercial Energy',
+      url: '#model-s',
+    },
+    {
+      title: 'Utilities',
+      url: '#model-s',
+    },
+    {
+      title: 'Test Drive',
+      url: '#model-s',
+    },
+  ]);
   const tabletMatch = useMediaQuery('(max-width:1200px)');
 
   return (
     <Wrapper>
+      <BackgroundBlur menuOpen={menuOpen}></BackgroundBlur>
       <Logo></Logo>
       <Menu>
+        {primaryLinks.map((link, i) => {
+          return (
+            <a key={i} href={link.url} onClick={() => setMenuOpen(false)}>
+              {link.title}
+            </a>
+          );
+        })}
         <a href='#model-s'>Model S</a>
         <a href='#model-3'>Model 3</a>
         <a href='#model-x'>Model X</a>
@@ -87,7 +149,7 @@ export default Header;
 
 const Wrapper = styled.div`
   min-height: 5.4rem;
-  padding: 0.8rem;
+  padding: 0.8rem 4rem;
   position: fixed;
   display: flex;
   justify-content: space-between;
@@ -112,7 +174,6 @@ const Logo = styled.img.attrs({
 
 const Menu = styled.div`
   display: flex;
-  margin-right: -10rem;
 
   a {
     text-decoration: none;
@@ -135,8 +196,6 @@ const Menu = styled.div`
 `;
 
 const RightMenu = styled(Menu)`
-  margin-right: 0;
-
   span#menu-btn {
     text-decoration: none;
     font-size: 1.6rem;
@@ -224,4 +283,18 @@ const CloseIcon = styled(FontAwesomeIcon)`
   @media (max-width: 1000px) {
     position: fixed;
   }
+`;
+
+const BackgroundBlur = styled.div`
+  position: fixed;
+  display: ${(props) => !props.menuOpen && 'none'};
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  -webkit-backdrop-filter: blur(4px);
+  backdrop-filter: blur(4px);
+  background-color: #222;
+  opacity: 0.3;
+  transition: backdrop-filter 0.5s ease, -webkit-backdrop-filter 0.5s ease;
 `;

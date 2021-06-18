@@ -176,7 +176,7 @@ const SubHeadline = styled.p`
 
 const ButtonGroup = styled.div`
   display: flex;
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
 
   @media (max-width: 600px) {
     flex-direction: column;
@@ -224,7 +224,7 @@ const Wrap = styled.div`
   margin-bottom: 4rem;
 
   @media (max-width: 600px) {
-    margin-bottom: 13rem;
+    margin-bottom: 12rem;
   }
 `;
 
