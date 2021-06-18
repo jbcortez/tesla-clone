@@ -145,7 +145,7 @@ export default Header;
 
 const Wrapper = styled.div`
   min-height: 5.4rem;
-  padding: 0.8rem 4rem;
+  padding: 0.8rem;
   position: fixed;
   display: flex;
   justify-content: space-between;
@@ -154,6 +154,10 @@ const Wrapper = styled.div`
   left: 0;
   right: 0;
   z-index: 10;
+
+  @media (min-width: 1200px) {
+    padding: 0.8rem 4rem;
+  }
 `;
 
 const Logo = styled.img.attrs({
