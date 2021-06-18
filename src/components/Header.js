@@ -125,7 +125,7 @@ const Header = () => {
         )}
         {HiddenMenuLinks.map((link, i) => {
           return (
-            <a key={i} href={link.url}>
+            <a key={i} href={link.url} onClick={() => setOpenMenu(false)}>
               {link.title}
             </a>
           );
