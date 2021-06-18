@@ -125,7 +125,7 @@ const Header = () => {
         )}
         {HiddenMenuLinks.map((link, i) => {
           return (
-            <a key={i} href={link.url} onClick={() => setOpenMenu(false)}>
+            <a key={i} href={link.url} onClick={() => setMenuOpen(false)}>
               {link.title}
             </a>
           );
@@ -296,5 +296,4 @@ const BackgroundBlur = styled.div`
   backdrop-filter: blur(4px);
   background-color: #222;
   opacity: 0.3;
-  transition: backdrop-filter 0.5s ease, -webkit-backdrop-filter 0.5s ease;
 `;
